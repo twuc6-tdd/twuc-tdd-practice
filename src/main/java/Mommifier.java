@@ -1,4 +1,5 @@
-import java.util.stream.Stream;
+import java.util.Arrays;
+import java.util.List;
 
 public class Mommifier {
     private final String VOWELS_STRING = "aeiou";
@@ -14,8 +15,10 @@ public class Mommifier {
         return count(inputString) < inputString.length() *0.3;
     }
     public long count(String inputString) {
-        System.out.println(Stream.of(inputString).filter(v -> isVowel(v)).count());
-        return Stream.of(inputString).filter(v -> isVowel(v)).count();
+
+        String[] chars = inputString.split("");
+        List<String> characters = Arrays.asList(chars);
+        return characters.stream().filter(v -> isVowel(v)).count();
     }
 
     private boolean isVowel(String v) {
