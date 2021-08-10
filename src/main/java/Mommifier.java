@@ -18,7 +18,7 @@ public class Mommifier {
 
         String[] chars = inputString.split("");
         List<String> characters = Arrays.asList(chars);
-        return characters.stream().filter(v -> isVowel(v)).count();
+        return characters.stream().filter(this::isVowel).count();
     }
 
     private boolean isVowel(String v) {
